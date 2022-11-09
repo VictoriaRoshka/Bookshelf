@@ -17,3 +17,32 @@
     margin-top: 50px;
 
 }
+.bookBox__item{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    align-items: center;
+
+}
+.bookBox__item_image{
+    width: 100px;
+    height: 100px;
+    
+
+}
+.bookBox__item_title{
+    font-size: 20px;
+    font-weight: 400;
+    color:black;
+    
+}
+.bookBox__item_year{
+    font-size: 18px;
+}
+.bookBox__item_author{
+    font-size: 20px;
+    font-weight: 600;
+    font-style: italic;
+    background-color: rgba(31, 96, 140, 0.762);
+    border-radius: 10px;
+}
