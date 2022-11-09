@@ -1,2 +1,19 @@
 *{
     font-family: 'Playfair Display', serif;
+}
+.head-image{
+    background-image: url(images/images.png);
+    background-color: rgba(31, 96, 140, 0.762);
+    width: 100%;
+    height: 200px;
+    background-position: center;
+    background-size: contain;
+    background-blend-mode: luminosity;
+}
+.title{
+    font-size: 58px;
+    font-weight: 600;
+    color: rgb(23, 37, 74);
+    margin-top: 50px;
+
+}
