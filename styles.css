@@ -1,5 +1,6 @@
 *{
     font-family: 'Playfair Display', serif;
+    box-sizing: border-box;
 }
 .head-image{
     background-image: url(images/images.png);
@@ -17,23 +18,31 @@
     margin-top: 50px;
 
 }
+.main-container{
+    max-width: 1500px;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap:30px;
+    align-items: center;
+    justify-content: center;
+}
 .bookBox__item{
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
-    align-items: center;
-
-}
-.bookBox__item_image{
-    width: 100px;
-    height: 100px;
+    border: 1px solid rgba(9, 68, 139, 0.177);
+    border-radius: 10px;
     
-
+    align-items: center;
+    width: calc(100% / 5);
+    padding: 20px;
+    gap:20px;
 }
 .bookBox__item_title{
     font-size: 20px;
-    font-weight: 400;
+    font-weight: 600;
     color:black;
+    text-align: center;
     
 }
 .bookBox__item_year{
@@ -43,6 +52,23 @@
     font-size: 20px;
     font-weight: 600;
     font-style: italic;
-    background-color: rgba(31, 96, 140, 0.762);
+    background-color: rgba(31, 96, 140, 0.51);
     border-radius: 10px;
+    padding: 10px;
+}
+.bookBox__item_buttons{
+    display: flex;
+    gap: 30px;
+    
+
+}
+.btn{
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    cursor: pointer;
+}
+.btn:hover{
+    font-weight: 800;
 }
