@@ -15,7 +15,7 @@
     font-size: 58px;
     font-weight: 600;
     color: rgb(23, 37, 74);
-    margin-top: 50px;
+    margin: 50px 0px; 
 
 }
 .main-container{
@@ -32,7 +32,6 @@
     flex-direction: column;
     border: 1px solid rgba(9, 68, 139, 0.177);
     border-radius: 10px;
-    
     align-items: center;
     width: calc(100% / 5);
     padding: 20px;
@@ -47,6 +46,8 @@
 }
 .bookBox__item_year{
     font-size: 18px;
+    color: rgb(31, 96, 140);
+    font-weight: 600;
 }
 .bookBox__item_author{
     font-size: 20px;
@@ -55,6 +56,7 @@
     background-color: rgba(31, 96, 140, 0.51);
     border-radius: 10px;
     padding: 10px;
+    text-align: center;
 }
 .bookBox__item_buttons{
     display: flex;
@@ -71,4 +73,18 @@
 }
 .btn:hover{
     font-weight: 800;
+}
+@media(max-width: 768px){
+    .bookBox__item{
+        width: calc(100% / 3);
+    }
+}
+@media(max-width:600px){
+    .main-container{
+        margin:20px;
+    }
+    .bookBox__item{
+        width:100%;
+        padding: 10px 50px;
+    }
 }
