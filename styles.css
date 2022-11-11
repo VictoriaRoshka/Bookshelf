@@ -37,6 +37,9 @@
     padding: 20px;
     gap:20px;
 }
+.bookBox__item_image{
+    height: 200px;
+}
 .bookBox__item_title{
     font-size: 20px;
     font-weight: 600;
