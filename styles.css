@@ -1,10 +1,11 @@
 *{
     font-family: 'Playfair Display', serif;
     box-sizing: border-box;
+    --primary-color: rgba(31, 96, 140, 0.762);
 }
 .head-image{
     background-image: url(images/images.png);
-    background-color: rgba(31, 96, 140, 0.762);
+    background-color: var(--primary-color);
     width: 100%;
     height: 200px;
     background-position: center;
@@ -26,6 +27,37 @@
     gap:30px;
     align-items: center;
     justify-content: center;
+}
+.btn_add{
+    width: 300px;
+    height: 60px;
+    background-color: var(--primary-color);
+    color:azure;
+    font-size: 20px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 50px;
+
+}
+.add-container{
+    display: flex;
+    width: 800px;
+    padding: 50px;
+    gap: 25px;
+    border: 2px solid rgba(9, 68, 139, 0.177);
+    align-items: center;
+    justify-content: space-around;
+    margin: 0 auto;
+    display: none;
+}
+.add-container__item{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+p{
+    font-weight: 600;
 }
 .bookBox__item{
     display: flex;
