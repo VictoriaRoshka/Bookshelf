@@ -35,78 +35,7 @@ const books = [
         year:'1994',
         image:'<img class="bookBox__item_image" src="images/Первое правило.jpg" alt=""/>'
     },
-    {
-        title:'Второе правило волшебника',
-        author:'Терри Гудкайнд',
-        year:'1995',
-        image:'<img class="bookBox__item_image" src="images/Второе правило.jpg" alt=""/>'
-    },
-    {
-        title:'Третье правило Волшебника',
-        author:'Терри Гудкайнд',
-        year:'1996',
-        image:'<img class="bookBox__item_image" src="images/3 правило.jpg" alt=""/>'
-    },
-    {
-        title:'Четвертое правило волшебника',
-        author:'Терри Гудкайнд',
-        year:'1997',
-        image:'<img class="bookBox__item_image" src="images/4 правило.jpg" alt=""/>'
-    },
-    {
-        title:'Пятое правило волшебника',
-        author:'Терри Гудкайнд',
-        year:'1999',
-        image:'<img class="bookBox__item_image" src="images/5 правило.jpg" alt=""/>'
-    },
-    {
-        title:'Шестое правило волшебника',
-        author:'Терри Гудкайнд',
-        year:'2000',
-        image:'<img class="bookBox__item_image" src="images/6 правило.jpg" alt=""/>'
-    },
-    {
-        title:'Седьмое правило волшебника. Книга 1',
-        author:'Терри Гудкайнд',
-        year:'2001',
-        image:'<img class="bookBox__item_image" src="images/7 правило.jpg" alt=""/>'
-    },
-    {
-        title:'Седьмое правило волшебника. Книга 2',
-        author:'Терри Гудкайнд',
-        year:'2001',
-        image:'<img class="bookBox__item_image" src="images/7 2 правило.jpg" alt=""/>'
-    },
-    {
-        title:'Восьмое правило волшебника. Книга 1',
-        author:'Терри Гудкайнд',
-        year:'2003',
-        image:'<img class="bookBox__item_image" src="images/8 правило.jpg" alt=""/>'
-    },
-    {
-        title:'Восьмое правило волшебника. Книга 2',
-        author:'Терри Гудкайнд',
-        year:'2003',
-        image:'<img class="bookBox__item_image" src="images/8 2 правило.jpg" alt=""/>'
-    },
-    {
-        title:'Девятое правило волшебника',
-        author:'Терри Гудкайнд',
-        year:'2005',
-        image:'<img class="bookBox__item_image" src="images/9 правило.jpg" alt=""/>'
-    },
-    {
-        title:'Десятое правило волшебника',
-        author:'Терри Гудкайнд',
-        year:'2006',
-        image:'<img class="bookBox__item_image" src="images/10 правило.jpg" alt=""/>'
-    },
-    {
-        title:'Последнее правило волшебника',
-        author:'Терри Гудкайнд',
-        year:'2007',
-        image:'<img class="bookBox__item_image" src="images/последнее правило.jpg" alt=""/>'
-    }
+    
 ]
 let bookBox = document.getElementById('container')
 
