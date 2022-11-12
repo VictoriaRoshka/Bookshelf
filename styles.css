@@ -14,14 +14,16 @@
 }
 .head-container-addBook{
     display: flex;
+    flex-direction: column;
     gap: 20px;
     align-items: center;
+    margin: 0 auto;
 }
 .title{
     font-size: 58px;
     font-weight: 600;
     color: rgb(23, 37, 74);
-    margin: 50px 0px; 
+    margin: 50px auto; 
 
 }
 .main-container{
@@ -42,7 +44,6 @@
     border-radius: 10px;
     border: none;
     cursor: pointer;
-    margin-left: 50px;
 
 }
 .add-container{
@@ -130,6 +131,16 @@ p{
     .bookBox__item{
         width: calc(100% / 3);
     }
+    
+    .head-container-addBook{
+        flex-direction:column;
+    }
+    .add-container{
+        flex-wrap: wrap;
+        gap:10px;
+        padding: 10px;
+        margin: 10px;
+    }
 }
 @media(max-width:600px){
     .main-container{
@@ -139,4 +150,22 @@ p{
         width:100%;
         padding: 20px 50px;
     }
+    .add-container{
+        flex-wrap: wrap;
+        gap:10px;
+        padding: 10px;
+        margin: 10px;
+    }
+    .head-container-addBook{
+        flex-direction:column;
+    }
+}
+@media(max-width:400px){
+    .add-container{
+        flex-direction: column;
+        gap:10px;
+        padding: 10px;
+        
+    }
+    
 }
