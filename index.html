@@ -15,12 +15,9 @@
         <header>
             <div class="head-image"></div>
             <h1 class="title" align="center">Книжная полка</h1>
-            <button id="add" class="btn_add">Добавить книгу</button>
-        </header>
-        <main>
-            <div class="main-container" id="container"></div>
-            
-            <div class="add-container">
+            <div class="head-container-addBook">
+                <button id="bookMenu" class="btn_bookMenu" onclick="addMenu()">Добавить книгу</button>
+            <div class="add-container" id="add-container">
                 <div class="add-container__item">
                     <p>Название книги:</p>
                     <input id="title"/>
@@ -37,7 +34,15 @@
                     <p>Ссылка на изображение:</p>
                     <input id="image"/>
                 </div>
+                <button id="addBook" onclick="addBook()">Добавить</button>
             </div>
+            </div>
+            
+        </header>
+        <main>
+            <div class="main-container" id="container"></div>
+            
+            
             
         </main>
         <script src="script.js"></script>
