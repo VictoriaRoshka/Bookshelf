@@ -112,8 +112,17 @@ function saveBook(){
         year: yearBook,
         image: imageBook
     }
-    books.push(book)
+    if (book > 0){
 
+        books.unshift(book)
+    } else {
+        alert('Поля не заполнены.')
+        
+        addContainer.style.display = "flex"
+
+        isOpen = true
+
+    }
     renderBooks()
     clearForm()
     
