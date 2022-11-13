@@ -3,42 +3,42 @@ const books = [
         title:'Портрет Дориана Грея',
         author: 'Оскар Уайльд',
         year: '1890',
-        image:'<img class="bookBox__item_image" src="images/дориан.jpg" alt=""/>',
+        image:'images/дориан.jpg',
         id: 1
     },
     {
         title:'Граф Монте-Кристо',
         author: 'Александр Дюма',
         year: '1844',
-        image:'<img class="bookBox__item_image" src="images/граф.jpg" alt=""/>',
+        image:'images/граф.jpg',
         id: 2
     },
     {
         title:'До встречи с тобой',
         author:'Джоджо Мойес',
         year: '2012',
-        image: '<img class="bookBox__item_image" src="images/до встречи.jpg" alt=""/>',
+        image: 'images/до встречи.jpg',
         id: 3
     },
     {
         title:'После тебя',
         author:'Джоджо Мойес',
         year:'2015',
-        image:'<img class="bookBox__item_image" src="images/после тебя.jpg" alt=""/>',
+        image:'images/после тебя.jpg',
         id: 4
     },
     {
         title:'Все та же я',
         author:'Джоджо Мойес',
         year:'2018',
-        image:'<img class="bookBox__item_image" src="images/все та же я.jpg" alt=""/>',
+        image:'images/все та же я.jpg',
         id: 5
     },
     {
         title:'Первое правило волшебника',
         author:'Терри Гудкайнд',
         year:'1994',
-        image:'<img class="bookBox__item_image" src="images/Первое правило.jpg" alt=""/>',
+        image:'images/Первое правило.jpg',
         id: 6
     },
     
@@ -49,7 +49,7 @@ function renderBooks(){
     books.forEach(function(book) {
         bookBox.innerHTML += `
         <div class="bookBox__item">
-         <div>${book.image}</div>
+         <img class="bookBox__item_image" src="${book.image}" alt="" />
          <div class="bookBox__item_title">${book.title}</div>
          <div class="bookBox__item_year">${book.year}</div>
          <div class="bookBox__item_author">${book.author}</div>
