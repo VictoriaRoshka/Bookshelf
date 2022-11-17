@@ -50,6 +50,7 @@ function renderBooks(){
         bookBox.innerHTML += `
         <div class="bookBox__item">
          <img class="bookBox__item_image" src="${book.image}" alt="" />
+         <img class="imageFail" id="imageFail" src="images\ImageFail.png" alt=""/>
          <div class="bookBox__item_title">${book.title}</div>
          <div class="bookBox__item_year">${book.year}</div>
          <div class="bookBox__item_author">${book.author}</div>
@@ -60,6 +61,8 @@ function renderBooks(){
         </div>`
     })
 }
+
+
 
 function deleteBook(id){
     const book = books.find((b) => {
@@ -103,20 +106,38 @@ function saveBook(){
     const titleBook = document.getElementById('title').value
     const authorBook = document.getElementById('author').value
     const yearBook = document.getElementById('year').value
-    const imageBook = document.getElementById('image').value
+    let imageBook = document.getElementById('image').value
+    let imageFail = document.getElementById('imageFail')
 
 
-    const book = {
-        title: titleBook,
-        author: authorBook,
-        year: yearBook,
-        image: imageBook
+    if (titleBook == 0){
+        alert('Укажите название книги')
+        addContainer.style.display = "flex"
+        return
     }
-    books.unshift(book)
-
-    renderBooks()
-    clearForm()
+    if (authorBook == 0){
+        alert('Укажите автора')
+        addContainer.style.display = "flex"
+        return
+    }
+    if (yearBook == 0){
+        alert('Укажите год издания')
+        addContainer.style.display = "flex"
+        return
+    }
+    else{
+        let book = {
+            title: titleBook,
+            author: authorBook,
+            year: yearBook,
+            image: imageBook
+        }
+        books.unshift(book)
     
+        renderBooks()
+        clearForm()
+
+    } 
 }
 renderBooks()
 
