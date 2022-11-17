@@ -16,25 +16,25 @@
             <div class="head-image"></div>
             <h1 class="title" align="center">Книжная полка</h1>
             <div class="head-container-addBook">
-                <button id="bookMenu" class="btn_bookMenu" onclick="addBook()">Добавить книгу</button>
+                <button id="bookMenu" class="btn btn_bookMenu" onclick="addBook()">Добавить книгу</button>
             <div class="add-container" id="add-container">
                 <div class="add-container__item">
                     <p>Название книги:</p>
-                    <input id="title"/>
+                    <input id="title" class="input"/>
                 </div>
                 <div class="add-container__item">
                     <p>Автор:</p>
-                    <input id="author"/>
+                    <input id="author" class="input"/>
                 </div>
                 <div class="add-container__item">
                     <p>Год издания:</p>
-                    <input id="year" type="number"/>
+                    <input id="year" type="number" class="input"/>
                 </div>
                 <div class="add-container__item">
                     <p>Ссылка на изображение:</p>
-                    <input id="image"/>
+                    <input id="image" class="input"/>
                 </div>
-                <button id="addBook" onclick="saveBook(),addBook()">Сохранить</button>
+                <button class="btn" id="addBook" onclick="saveBook(),addBook()">Сохранить</button>
             </div>
             </div>
             

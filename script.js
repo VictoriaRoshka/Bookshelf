@@ -106,7 +106,6 @@ function saveBook(){
     const authorBook = document.getElementById('author').value
     const yearBook = document.getElementById('year').value
     let imageBook = document.getElementById('image').value
-    let image 
 
 
     if (titleBook == 0){
