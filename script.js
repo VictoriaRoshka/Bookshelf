@@ -50,6 +50,7 @@ function renderBooks(){
         bookBox.innerHTML += `
         <div class="bookBox__item">
          <img class="bookBox__item_image" src="${book.image}" alt="" />
+         <img class="imageFail" id="imageFail" src="images\ImageFail.png" alt=""/>
          <div class="bookBox__item_title">${book.title}</div>
          <div class="bookBox__item_year">${book.year}</div>
          <div class="bookBox__item_author">${book.author}</div>
@@ -106,6 +107,7 @@ function saveBook(){
     const authorBook = document.getElementById('author').value
     const yearBook = document.getElementById('year').value
     let imageBook = document.getElementById('image').value
+    let imageFail = document.getElementById('imageFail')
 
 
     if (titleBook == 0){
@@ -123,20 +125,18 @@ function saveBook(){
         addContainer.style.display = "flex"
         return
     }
-    if(imageBook == 0){
-        imageBook = 'images/ImageFail.png'
-    }
-    let book = {
-        title: titleBook,
-        author: authorBook,
-        year: yearBook,
-        image: imageBook
-    }
-    books.unshift(book)
+    else{
+        let book = {
+            title: titleBook,
+            author: authorBook,
+            year: yearBook,
+            image: imageBook
+        }
+        books.unshift(book)
+    
+        renderBooks()
+        clearForm()
 
-    renderBooks()
-    clearForm()
+    } 
 }
 renderBooks()
-
-
