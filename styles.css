@@ -46,6 +46,9 @@
     cursor: pointer;
 
 }
+.btn_bookMenu:hover{
+    font-weight: 800
+}
 .add-container{
     display: flex;
     padding: 25px;
@@ -59,8 +62,14 @@
     
 }
 input{
+    outline-color: gray;
+    border-width: 2px;
     border-radius: 5px;
+}
+input:focus{
     border-color: var(--primary-color);
+    border-width: 3px;
+    outline: none;
 }
 .add-container__item{
     display: flex;
@@ -76,6 +85,9 @@ p{
     font-size: 18px;
     border-radius: 5px;
     cursor: pointer;
+}
+#addBook:hover{
+    font-weight: 800
 }
 .bookBox__item{
     display: flex;
