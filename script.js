@@ -43,6 +43,12 @@ const books = [
     },
     
 ]
+const addButton = document.getElementById('bookMenu')
+const getBook = document.getElementById('addBook')
+
+addButton.addEventListener('click', addBook)
+getBook.addEventListener('click', saveBook)
+
 let bookBox = document.getElementById('container')
 function renderBooks(){
     bookBox.innerHTML = ""
@@ -139,3 +145,4 @@ function saveBook(){
     clearForm()
 }
 renderBooks()
+
