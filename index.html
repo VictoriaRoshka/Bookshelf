@@ -12,12 +12,8 @@
 
     </head>
     <body>
-        <header>
-            <div class="head-image"></div>
-            <h1 class="title" align="center">Книжная полка</h1>
-            <div class="head-container-addBook">
-                <button id="bookMenu" class="btn_bookMenu">Добавить книгу</button>
-            <div class="add-container" id="add-container">
+        <div class="add-modal__container" id="add-container">
+            <div class="modal-box">
                 <div class="add-container__item">
                     <p>Название книги:</p>
                     <input id="title"/>
@@ -34,8 +30,19 @@
                     <p>Ссылка на изображение:</p>
                     <input id="image"/>
                 </div>
-                <button id="addBook">Сохранить</button>
+                <div class="button-box">
+                    <button id="saveBook__btn" class="modal-btn">Сохранить</button>
+                    <button id="closeModal" class="modal-btn">Закрыть</button>
+                </div>
+                
             </div>
+
+        </div>
+        <header>
+            <div class="head-image"></div>
+            <div class="head-container">
+                <h1 class="title" align="center">Книжная полка</h1>
+                <button id="openModal-btn" class="btn_bookMenu">Добавить книгу</button> 
             </div>
             
         </header>

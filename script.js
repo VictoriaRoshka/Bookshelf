@@ -43,13 +43,25 @@ const books = [
     },
     
 ]
-const addButton = document.getElementById('bookMenu')
-const getBook = document.getElementById('addBook')
+const addContainer = document.getElementById('add-container')
+const addButton = document.getElementById('openModal-btn')
+const getBook = document.getElementById('saveBook__btn')
+const closeBtn = document.getElementById('closeModal')
+let bookBox = document.getElementById('container')
 
 addButton.addEventListener('click', addBook)
 getBook.addEventListener('click', saveBook)
+closeBtn.addEventListener('click', closeModal)
 
-let bookBox = document.getElementById('container')
+function closeModal(){
+
+    addContainer.style.display = "none"
+
+
+}
+
+
+
 function renderBooks(){
     bookBox.innerHTML = ""
     books.forEach(function(book) {
@@ -89,8 +101,7 @@ function clearForm(){
 
 let isOpen = false
 function addBook(){
-    const addContainer = document.getElementById('add-container')
-    const addButton = document.getElementById('bookMenu')
+    
 
     if (isOpen){
 
@@ -107,7 +118,7 @@ function addBook(){
 }
 
 function saveBook(){
-    const btnAdd = document.getElementById('addBook')
+    const btnAdd = document.getElementById('saveBook__btn')
     const titleBook = document.getElementById('title').value
     const authorBook = document.getElementById('author').value
     const yearBook = document.getElementById('year').value
@@ -143,6 +154,7 @@ function saveBook(){
 
     renderBooks()
     clearForm()
+    
 }
 renderBooks()
 
