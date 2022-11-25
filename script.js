@@ -1,4 +1,4 @@
-const books = [
+let books = [
     {
         title:'Портрет Дориана Грея',
         author: 'Оскар Уайльд',
@@ -164,12 +164,13 @@ function saveBook(){
     addBook()
     saveToLocalStorage()
 }
-    const booksJson = localStorage.getItem(books)
-    const savedBooks = JSON.parse(booksJson)
+    
+const booksJson = localStorage.getItem('books')
+const savedBooks = JSON.parse(booksJson)
 
-    if (booksJson){
-    books = savedBooks
- }
+if (booksJson){
+books = savedBooks
+}
 
 renderBooks()
 
