@@ -56,8 +56,12 @@ closeBtn.addEventListener('click', closeModal)
 function closeModal(){
 
     addContainer.style.display = "none"
+}
 
+function saveToLocalStorage(){
 
+    const booksJSON = JSON.stringify(books)
+    localStorage.setItem('books', booksJSON)
 }
 
 
@@ -90,6 +94,9 @@ function deleteBook(id){
     books.splice(bookIndex, 1)
 
     renderBooks()
+    saveToLocalStorage()
+
+    
 }
 
 function clearForm(){
@@ -154,7 +161,15 @@ function saveBook(){
 
     renderBooks()
     clearForm()
-    
+    addBook()
+    saveToLocalStorage()
 }
+    const booksJson = localStorage.getItem(books)
+    const savedBooks = JSON.parse(booksJson)
+
+    if (booksJson){
+    books = savedBooks
+ }
+
 renderBooks()
 
