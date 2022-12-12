@@ -1,45 +1,46 @@
+let count = 0
 let books = [
     {
         title:'Портрет Дориана Грея',
         author: 'Оскар Уайльд',
         year: '1890',
         image:'images/дориан.jpg',
-        id: 1
+        id: count++
     },
     {
         title:'Граф Монте-Кристо',
         author: 'Александр Дюма',
         year: '1844',
         image:'images/граф.jpg',
-        id: 2
+        id: count++
     },
     {
         title:'До встречи с тобой',
         author:'Джоджо Мойес',
         year: '2012',
         image: 'images/до встречи.jpg',
-        id: 3
+        id: count++
     },
     {
         title:'После тебя',
         author:'Джоджо Мойес',
         year:'2015',
         image:'images/после тебя.jpg',
-        id: 4
+        id: count++
     },
     {
         title:'Все та же я',
         author:'Джоджо Мойес',
         year:'2018',
         image:'images/все та же я.jpg',
-        id: 5
+        id: count++
     },
     {
         title:'Первое правило волшебника',
         author:'Терри Гудкайнд',
         year:'1994',
         image:'images/Первое правило.jpg',
-        id: 6
+        id: count++
     },
     
 ]
@@ -52,6 +53,7 @@ let bookBox = document.getElementById('container')
 addButton.addEventListener('click', addBook)
 getBook.addEventListener('click', saveBook)
 closeBtn.addEventListener('click', closeModal)
+
 
 function closeModal(){
 
@@ -77,13 +79,22 @@ function renderBooks(){
          <div class="bookBox__item_author">${book.author}</div>
          <div class="bookBox__item_buttons">
                 <button class="btn btn_change">Изменить</button>
-                <button class="btn btn_delete" onclick='deleteBook(${book.id})'>Удалить</button>
+                <button class="btn btn_delete_${book.id}">Удалить</button>
           </div>
         </div>`
     })
+
+    books.forEach((book) => {
+        const deleteButton = document.getElementsByClassName('btn_delete_${book.id}')
+
+        function makeDelete (){
+            deleteBook(book.id)
+        }
+
+        deleteButton.addEventListener('click', makeDelete) 
+    })
+    
 }
-
-
 
 function deleteBook(id){
     const book = books.find((b) => {
@@ -133,29 +144,30 @@ function saveBook(){
     let image 
 
 
-    if (titleBook == 0){
+    if (titleBook.length === 0){
         alert('Укажите название книги')
         addContainer.style.display = "flex"
         return
     }
-    if (authorBook == 0){
+    if (authorBook.length === 0){
         alert('Укажите автора')
         addContainer.style.display = "flex"
         return
     }
-    if (yearBook == 0){
+    if (yearBook.length === 0){
         alert('Укажите год издания')
         addContainer.style.display = "flex"
         return
     }
-    if(imageBook == 0){
+    if(imageBook.length === 0){
         imageBook = 'images/ImageFail.png'
     }
     let book = {
         title: titleBook,
         author: authorBook,
         year: yearBook,
-        image: imageBook
+        image: imageBook,
+        id: count++
     }
     books.unshift(book)
 
