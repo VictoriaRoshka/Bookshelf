@@ -79,13 +79,15 @@ function renderBooks(){
          <div class="bookBox__item_author">${book.author}</div>
          <div class="bookBox__item_buttons">
                 <button class="btn btn_change">Изменить</button>
-                <button class="btn btn_delete_${book.id}">Удалить</button>
+                <button class="btn btn_delete_${book.id}" id="btn_delete_${book.id}">Удалить</button>
           </div>
         </div>`
     })
 
     books.forEach((book) => {
-        const deleteButton = document.getElementsByClassName('btn_delete_${book.id}')
+        // const deleteButton = Array.from(document.getElementsByClassName(`btn_delete_${book.id}`))[0]
+        const deleteButton = document.getElementById(`btn_delete_${book.id}`)
+
 
         function makeDelete (){
             deleteBook(book.id)
