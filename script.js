@@ -52,12 +52,17 @@ const closeBtn = document.getElementById('closeModal')
 let bookBox = document.getElementById('container')
 let change = document.getElementById('change')
 let back_Btn = document.getElementById('close')
+let nowTitle = document.getElementById('title_change')
+let nowAuthor = document.getElementById('author_change')
+let nowYear = document.getElementById('year_change')
+let nowImage = document.getElementById('image_change')
 
 addButton.addEventListener('click', addBook)
 getBook.addEventListener('click', saveBook)
 closeBtn.addEventListener('click', closeModal)
 back_Btn.addEventListener('click', backToShelf)
-// change.addEventListener('click', changeBox)
+change.addEventListener('click', changeBook)
+
 
 
 function closeModal(){
@@ -65,11 +70,11 @@ function closeModal(){
     addContainer.style.display = "none"
 }
 
-// function saveToLocalStorage(){
+function saveToLocalStorage(){
 
-//     const booksJSON = JSON.stringify(books)
-//     localStorage.setItem('books', booksJSON)
-// }
+    const booksJSON = JSON.stringify(books)
+    localStorage.setItem('books', booksJSON)
+}
 
 
 
@@ -105,21 +110,22 @@ function renderBooks(){
 
         const changeButton = document.getElementById(`btn_change_${book.id}`)
         changeButton.addEventListener('click', showModal)
+        
 
         function showModal(){
 
             changeContainer.style.display = "flex"
 
-            let nowTitle = document.getElementById('title_change')
+            
             nowTitle.value = book.title
 
-            let nowAuthor = document.getElementById('author_change')
+            
             nowAuthor.value = book.author
 
-            let nowYear = document.getElementById('year_change')
+            
             nowYear.value = book.year
 
-            let nowImage = document.getElementById('image_change')
+            
             nowImage.value = book.image
 
         }
@@ -127,8 +133,50 @@ function renderBooks(){
         
 
     })
-    
 }
+
+function changeBook(id){
+    
+        let itemBook = books.find((i) => {
+            return i.id === id
+        })
+        
+        if (nowTitle.length === 0){
+            alert('Укажите название книги')
+            changeContainer.style.display = "flex"
+            return
+        }
+        if (nowAuthor.length === 0){
+            alert('Укажите автора')
+            changeContainer.style.display = "flex"
+            return
+        }
+        if (nowYear.length === 0){
+            alert('Укажите год издания')
+            changeContainer.style.display = "flex"
+            return
+        }
+        if(nowImage.length === 0){
+            nowImage.value = 'images/ImageFail.png'
+        }
+        let item = {
+            title: nowTitle.value,
+            author: nowAuthor.value,
+            year: nowYear.value,
+            image: nowImage.value,
+            id: count++
+        }
+
+        books.splice(itemBook, 1, item)
+
+        renderBooks()
+        backToShelf()
+        saveToLocalStorage()
+
+
+
+
+    }
 
 function backToShelf(){
 
@@ -216,12 +264,12 @@ function saveBook(){
     saveToLocalStorage()
 }
     
-// const booksJson = localStorage.getItem('books')
-// const savedBooks = JSON.parse(booksJson)
+const booksJson = localStorage.getItem('books')
+const savedBooks = JSON.parse(booksJson)
 
-// if (booksJson){
-// books = savedBooks
-// }
+if (booksJson){
+books = savedBooks
+}
 
 renderBooks()
 
