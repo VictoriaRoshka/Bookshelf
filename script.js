@@ -50,7 +50,7 @@ const addButton = document.getElementById('openModal-btn')
 const getBook = document.getElementById('saveBook__btn')
 const closeBtn = document.getElementById('closeModal')
 let bookBox = document.getElementById('container')
-let change = document.getElementById('change')
+let updateBtn = document.getElementById('change')
 let back_Btn = document.getElementById('close')
 let nowTitle = document.getElementById('title_change')
 let nowAuthor = document.getElementById('author_change')
@@ -61,7 +61,7 @@ addButton.addEventListener('click', addBook)
 getBook.addEventListener('click', saveBook)
 closeBtn.addEventListener('click', closeModal)
 back_Btn.addEventListener('click', backToShelf)
-change.addEventListener('click', changeBook)
+
 
 
 
@@ -110,23 +110,24 @@ function renderBooks(){
 
         const changeButton = document.getElementById(`btn_change_${book.id}`)
         changeButton.addEventListener('click', showModal)
+
+        function makeChange(){
+            changeBook(book.id, makeChange)
+        }
         
 
         function showModal(){
 
+            updateBtn.addEventListener('click', makeChange)
+
             changeContainer.style.display = "flex"
 
-            
             nowTitle.value = book.title
-
-            
             nowAuthor.value = book.author
-
-            
             nowYear.value = book.year
-
-            
             nowImage.value = book.image
+
+
 
         }
 
@@ -135,11 +136,14 @@ function renderBooks(){
     })
 }
 
-function changeBook(id){
+function changeBook(id, makeChange){
     
         let itemBook = books.find((i) => {
             return i.id === id
         })
+        const itemIndex = books.indexOf(itemBook)
+
+        updateBtn.removeEventListener('click', makeChange)
         
         if (nowTitle.length === 0){
             alert('Укажите название книги')
@@ -164,10 +168,10 @@ function changeBook(id){
             author: nowAuthor.value,
             year: nowYear.value,
             image: nowImage.value,
-            id: count++
+            id
         }
 
-        books.splice(itemBook, 1, item)
+        books.splice(itemIndex, 1, item)
 
         renderBooks()
         backToShelf()
