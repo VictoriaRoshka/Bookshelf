@@ -145,23 +145,23 @@ function changeBook(id, makeChange){
 
         updateBtn.removeEventListener('click', makeChange)
         
-        if (nowTitle.length === 0){
+        if (nowTitle.value.length === 0){
             alert('Укажите название книги')
             changeContainer.style.display = "flex"
             return
         }
-        if (nowAuthor.length === 0){
+        if (nowAuthor.value.length === 0){
             alert('Укажите автора')
             changeContainer.style.display = "flex"
             return
         }
-        if (nowYear.length === 0){
+        if (nowYear.value.length === 0){
             alert('Укажите год издания')
             changeContainer.style.display = "flex"
             return
         }
-        if(nowImage.length === 0){
-            nowImage.value = 'images/ImageFail.png'
+        if(nowImage.value.length === 0){
+            nowImage.value = `images/ImageFail.png`
         }
         let item = {
             title: nowTitle.value,
