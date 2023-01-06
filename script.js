@@ -143,7 +143,7 @@ function changeBook(id, makeChange){
         })
         const itemIndex = books.indexOf(itemBook)
 
-        updateBtn.removeEventListener('click', makeChange)
+        
         
         if (nowTitle.value.length === 0){
             alert('Укажите название книги')
@@ -173,8 +173,10 @@ function changeBook(id, makeChange){
 
         books.splice(itemIndex, 1, item)
 
+
         renderBooks()
         backToShelf()
+        updateBtn.removeEventListener('click', makeChange)
         saveToLocalStorage()
 
 
